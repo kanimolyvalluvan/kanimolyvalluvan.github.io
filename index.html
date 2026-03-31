@@ -97,6 +97,21 @@ footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
+.evidence-intro{color:var(--muted);max-width:600px;margin-bottom:48px;line-height:1.9;}
+.evidence-category{margin-bottom:56px;}
+.evidence-category-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:24px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.evidence-card{border:1px solid var(--border);overflow:hidden;transition:all 0.2s;cursor:pointer;}
+.evidence-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 32px rgba(184,144,42,0.1);}
+.evidence-card img{width:100%;height:200px;object-fit:cover;object-position:top;display:block;}
+.evidence-caption{padding:16px 20px;}
+.evidence-caption-title{font-size:14px;font-weight:500;margin-bottom:4px;}
+.evidence-caption-sub{font-size:12px;color:var(--muted);}
+.evidence-badge{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-light);padding:3px 8px;margin-top:8px;}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;}
+.lightbox.active{display:flex;}
+.lightbox img{max-width:90%;max-height:90vh;object-fit:contain;}
+.lightbox-close{position:absolute;top:24px;right:32px;color:white;font-size:32px;cursor:pointer;font-weight:300;line-height:1;}
 @media(max-width:768px){nav{padding:0 24px;}.nav-links{display:none;}.hero{padding:100px 24px 60px;}.hero::before{display:none;}.hero-photo-wrap{display:none;}.hero-stats{position:static;flex-direction:row;justify-content:flex-start;margin-top:48px;gap:32px;}section{padding:72px 24px;}.about-grid{grid-template-columns:1fr;gap:40px;}footer{flex-direction:column;text-align:center;}}
 </style>
 </head>
@@ -110,6 +125,7 @@ footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#work-evidence">Work Evidence</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -311,6 +327,96 @@ footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
+<section id="work-evidence">
+  <div class="section-header fade-in">
+    <div class="section-tag">Proof of Work</div>
+    <h2 class="section-title">Work Evidence</h2>
+  </div>
+  <p class="evidence-intro fade-in">A glimpse into real tasks handled during my internship at B. Braun Medical Industries — from complex Excel data management to on-site hospital project coordination. Confidential details have been redacted.</p>
+
+  <div class="evidence-category fade-in">
+    <div class="evidence-category-title">📸 On-Site & Office Work</div>
+    <div class="evidence-grid">
+      <div class="evidence-card" onclick="openLightbox('photo_2_field_work.jpg')">
+        <img src="photo_2_field_work.jpg" alt="Field work at hospital site"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Hospital Site Coordination</div>
+          <div class="evidence-caption-sub">On-site during medical equipment setup and T&C process at a hospital project</div>
+          <span class="evidence-badge">B. Braun · Field Work</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('photo_1_desk_work.jpg')">
+        <img src="photo_1_desk_work.jpg" alt="Working on Excel tracker"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Excel Data Management</div>
+          <div class="evidence-caption-sub">Managing procurement trackers and project pricing models across multiple hospital projects</div>
+          <span class="evidence-badge">B. Braun · Data Work</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('photo_3_workstation.jpg')">
+        <img src="photo_3_workstation.jpg" alt="Workstation with technical documents"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Technical Documentation</div>
+          <div class="evidence-caption-sub">Reviewing and preparing equipment specification documents and quotation files</div>
+          <span class="evidence-badge">B. Braun · Documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evidence-category fade-in">
+    <div class="evidence-category-title">💻 Data & Task Management</div>
+    <div class="evidence-grid">
+      <div class="evidence-card" onclick="openLightbox('work_6_excel_tracker.png')">
+        <img src="work_6_excel_tracker.png" alt="Excel pricing tracker"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Complex Excel Pricing Tracker</div>
+          <div class="evidence-caption-sub">Managing 150+ surgical items with product codes, vendors, quantities and pricing formulas</div>
+          <span class="evidence-badge">Data Entry · Excel</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('work_7_email_task.png')">
+        <img src="work_7_email_task.png" alt="Email task assignment"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Client Quotation Requests</div>
+          <div class="evidence-caption-sub">Received and processed urgent quotation requests from clients forwarded directly by supervisor</div>
+          <span class="evidence-badge">Task Management</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('work_1_task_assignment.png')">
+        <img src="work_1_task_assignment.png" alt="Task assignment chat"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Trusted for Urgent Tasks</div>
+          <div class="evidence-caption-sub">Assigned critical quotation preparation tasks independently — trusted to handle client-facing deliverables</div>
+          <span class="evidence-badge">Accountability</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('work_4_cover_letter.png')">
+        <img src="work_4_cover_letter.png" alt="Cover letter and quotation preparation"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Cover Letter & Quotation Preparation</div>
+          <div class="evidence-caption-sub">Kani assigned to prepare cover letter and cardiac set quotation for hospital — with tight deadline</div>
+          <span class="evidence-badge">Documentation · Deadline</span>
+        </div>
+      </div>
+      <div class="evidence-card" onclick="openLightbox('work_5_urgent_task.png')">
+        <img src="work_5_urgent_task.png" alt="Urgent task handling"/>
+        <div class="evidence-caption">
+          <div class="evidence-caption-title">Urgent Quotation — Trusted Independently</div>
+          <div class="evidence-caption-sub">Kani assigned urgent client quotation first thing in the morning — trusted to handle independently</div>
+          <span class="evidence-badge">Urgent · Independent</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Work Evidence"/>
+</div>
+
 <section id="contact">
   <div class="section-header">
     <div class="section-tag">Get In Touch</div>
@@ -318,7 +424,7 @@ footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <p class="contact-sub">Open to HR Admin, Talent Acquisition, and People &amp; Culture opportunities across Malaysia.</p>
   <div class="contact-links">
-    <a href="mailto:kanimolyvalluvan@gmail.com" class="contact-link">✉️ kanimolyvalluvan@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#a2c9c3cccbcfcdcedbd4c3ceced7d4c3cce2c5cfc3cbce8cc1cdcf" class="contact-link">✉️ <span class="__cf_email__" data-cfemail="afc4cec1c6c2c0c3d6d9cec3c3dad9cec1efc8c2cec6c381ccc0c2">[email&#160;protected]</span></a>
     <a href="tel:+60167320712" class="contact-link">📱 +60 16-732 0712</a>
     <a href="https://www.linkedin.com/in/kanimolyvalluvan" target="_blank" class="contact-link">🔗 LinkedIn Profile</a>
   </div>
@@ -329,11 +435,11 @@ footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify
   <span>BSc (Hons) Human Resource Development &middot; UNIMAS</span>
 </footer>
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('active');}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
